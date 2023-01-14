@@ -13,6 +13,6 @@ export default [
 },
 {
   description: 'Learn to boil water',
-  complete: false, 
+  complete: false,
 }
 ]
