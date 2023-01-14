@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box
+}
+*, *::before, *::after {
+  box-sizing: inherit
+}
+
+body {
+  background-color:sandybrown;
+}
+
+.notepad {
+  margin-left: 555px;
+  height: 35em;
+  width: 30em;
+  padding: 10px;
+  border: .25em solid;
+  background-color: blanchedalmond;
+  text-align: center;
+  /* font-size: 16px; */
+}
+
+.add {
+  text-align: center;
+}
+
+ul, h4 {
+  margin: 0;
+}
+
+#submit {
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
