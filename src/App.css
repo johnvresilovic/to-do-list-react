@@ -1,8 +1,8 @@
-html {
-  box-sizing: border-box
-}
-*, *::before, *::after {
-  box-sizing: inherit
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -10,9 +10,9 @@ body {
 }
 
 .notepad {
-  margin-left: 555px;
-  height: 35em;
-  width: 30em;
+  max-width: 30em;
+  margin: 0 auto;
+  min-height: 25em;
   padding: 10px;
   border: .25em solid;
   background-color: blanchedalmond;
