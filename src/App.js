@@ -4,6 +4,7 @@ import ListItem from './components/ListItem';
 import items from './items'
 
 function App() {
+
   const [itemList, setItemList] = useState(items)
   const addItem = e => {
       e.preventDefault()
@@ -17,7 +18,7 @@ function App() {
     <div className="notepad">
       <h2>To Do List</h2>
       {itemList.map((element, index) => {
-        return( !element.complete && <ListItem element={element} key={index}/>  )
+        return( <ListItem element={element} key={index}/> )
         })}
       </div>
       <div className='add'>

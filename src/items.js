@@ -1,11 +1,11 @@
-export default [
+const items = [
 {
   description: 'Fix CR bug',
-  complete: false,
+  complete: true,
 },
 {
   description: 'Get coding job',
-  complete: false,
+  complete: true,
 },
 {
   description: 'De-age self 20 years',
@@ -14,5 +14,11 @@ export default [
 {
   description: 'Learn to boil water',
   complete: false,
+},
+{
+  description: 'Always look on the bright side of life',
+  complete: false,
 }
 ]
+
+export default items

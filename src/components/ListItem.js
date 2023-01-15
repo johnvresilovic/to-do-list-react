@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledDiv = styled.div `
-  background-color: ${props => props.complete ? 'green' : 'red'};
+  background-color: ${props => props.complete ? 'blanchedalmond' : 'red'};
+  text-decoration: ${props => props.complete ? 'line-through' : 'red'};
 `
 
 const ListItem = ({element}) => {
