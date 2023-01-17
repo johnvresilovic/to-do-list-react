@@ -18,7 +18,10 @@ function App() {
     <div className="notepad">
       <h2>To Do List</h2>
       {itemList.map((element, index) => {
-        return( <ListItem element={element} key={index}/> )
+        return(
+          
+           <ListItem element={element} key={index}/>
+           )
         })}
       </div>
       <div className='add'>
