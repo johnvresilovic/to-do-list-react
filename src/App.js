@@ -1,11 +1,12 @@
 import './App.css';
 import { useState } from 'react';
-import ListItem from './components/ListItem';
-import items from './items'
+import ToDoItems from './components/ToDoItems';
+import OneItem from './components/OneItem'
+import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 
 function App() {
 
-  const [itemList, setItemList] = useState(items)
+  const [itemList, setItemList] = useState([])
   const addItem = e => {
       e.preventDefault()
       setItemList(itemList.concat([{
@@ -17,12 +18,12 @@ function App() {
     <>
     <div className="notepad">
       <h2>To Do List</h2>
-      {itemList.map((element, index) => {
-        return(
-          
-           <ListItem element={element} key={index}/>
-           )
-        })}
+      <Router>
+        <Routes>
+            <Route path='/' element={<ToDoItems />}/>
+            <Route path='/:id' element={<OneItem />}/>
+            </Routes>
+        </Router>
       </div>
       <div className='add'>
       <form onSubmit={addItem}>
