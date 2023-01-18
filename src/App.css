@@ -19,23 +19,6 @@ body {
   text-align: center;
 }
 
-.add {
-  text-align: center;
-}
-
-ul, h4 {
-  margin: 0;
-}
-
-#submit {
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
 li {
   list-style-type: none;
 }

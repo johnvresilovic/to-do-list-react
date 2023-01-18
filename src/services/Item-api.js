@@ -8,12 +8,23 @@ export function toDoItems() {
     return response
 }
 
-//Show
-export function oneItem(id) {
-    const URL = `${baseURL}/${id}`
-    const response = axios.get(URL)
+//New
+export function createItem(item) {
+    const URL = baseURL
+    const response = axios.post(URL, item)
     return response
 }
+
+//Delete
+export function deleteItem(id, item) {
+    const URL = `${baseURL}/${id}`
+    const response = axios.delete(URL, item)
+    return response
+}
+
+//Update
+
+//Create
 
 //Edit
 export function editList(id, updatedList) {
@@ -22,11 +33,9 @@ export function editList(id, updatedList) {
     return response
 }
 
-//Create
-export function createItem(item) {
-    const URL = baseURL
-    const response = axios.post(URL, item)
+//Show
+export function oneItem(id) {
+    const URL = `${baseURL}/${id}`
+    const response = axios.get(URL)
     return response
 }
-
-//Delete

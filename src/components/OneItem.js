@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { oneItem } from '../services/Item-api'
+import { oneItem, deleteItem } from '../services/Item-api'
 import { useParams, useNavigate } from 'react-router-dom'
 
 export default function OneItem () {
@@ -9,6 +9,10 @@ export default function OneItem () {
     useEffect(() => {
         oneItem(id)
         .then(res => setAnItem(res.data))}, [])
+    const deleteTheItem = () => {
+            deleteItem(id)
+            nav('/')
+        }
     return (
         <div>
             <h3>{anItem.description}</h3>
@@ -16,6 +20,9 @@ export default function OneItem () {
             <br />
             <br />
             <button onClick={() => {nav(`/${id}/edit`)}}>Edit</button>
+            <br />
+            <br />
+            <button onClick={deleteTheItem}>Delete</button>
             <br />
             <br />
             <button onClick={() => {nav('/')}}>Back to list</button>

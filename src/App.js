@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <div className="notepad">
-      <h2>To Do List</h2>
+      <h1>To Do</h1>
       <Router>
         <Routes>
             <Route path='/' element={<ToDoItems />}/>

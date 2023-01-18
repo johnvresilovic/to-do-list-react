@@ -5,13 +5,13 @@ export default function Create() {
     const nav = useNavigate()
     const createTheItem = (e) => {
         const item = {description: e.target.description.value, complete: false}
-        createTheItem(item)
+        createItem(item)
         nav('/')
     }
 return(
     <div>
         <br />
-        <h4>Add new item</h4>
+        <h3>Add item</h3>
         <form onSubmit={createTheItem}>
             <input type='text' name='description' id='dsc'/>
             <input type='submit'/>
