@@ -8,13 +8,21 @@ export default function ToDoItems() {
         toDoItems() // calling the function to get the data
         .then(res => setTodos(res.data)) // setting state with returned data
     }, [])
+    const taskNotDone = {
+        backgroundColor: "yellow"
+    }
+    const taskDone = {
+        textDecoration: "line-through"
+    }
    
     return(
         <div>
-            {todos.map((todo) =>{
-                return (
-                    <p><a href={`/${todo._id}`}>{todo.description}</a></p>
-                )
+            {todos.map((todo) => {
+                if (todo.complete) {
+                    return <p style={taskDone}><a href={`/${todo._id}`}>{todo.description}</a></p>
+                } else {
+                    return <p style={taskNotDone}><a href={`/${todo._id}`}>{todo.description}</a></p>
+                }
             })}
           <Create />  
         </div>
