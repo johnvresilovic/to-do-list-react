@@ -11,13 +11,11 @@ export default function ToDoItems() {
    
     return(
         <div>
-            {/* <ul> */}
             {todos.map((todo) =>{
                 return (
                     <p><a href={`/${todo._id}`}>{todo.description}</a></p>
                 )
             })}
-          {/* </ul> */}
           <Create />  
         </div>
     )

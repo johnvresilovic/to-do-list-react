@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 
 export default function EditList() {
     const {id} = useParams()
-    const {nav} = useNavigate()
+    const nav = useNavigate()
     const [data, setData] = useState({})
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export default function EditList() {
         e.preventDefault()
         const updatedList = {description: e.target.description.value, complete: e.target.complete.checked}
         editList(id, updatedList)
-        nav(`/${id}`)
+        nav('/')
     }
 
    return (
@@ -26,6 +26,9 @@ export default function EditList() {
             Complete: <input type='checkbox' name='complete' defaultChecked={data.complete}/>
             <input type='submit' />
         </form>
+        {/* <br />
+        <br />
+        <button onClick={() => {nav('/')}}>Back to list</button> */}
     </div>
   )
 }
