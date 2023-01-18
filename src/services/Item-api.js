@@ -2,14 +2,14 @@ import axios from "axios";
 const baseURL = 'http://localhost:3001/todoitems'  //this is how we connect to the express app
 
 //Index
-export default function getListItems() {
+export function toDoItems() {
     const URL = baseURL
     const response = axios.get(URL)
     return response
 }
 
 //Show
-export function getOneItem(id) {
+export function oneItem(id) {
     const URL = `${baseURL}/${id}`
     const response = axios.get(URL)
     return response
@@ -21,3 +21,12 @@ export function editList(id, updatedList) {
     const response = axios.put(URL, updatedList)
     return response
 }
+
+//Create
+export function createItem(item) {
+    const URL = baseURL
+    const response = axios.post(URL, item)
+    return response
+}
+
+//Delete

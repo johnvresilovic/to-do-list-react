@@ -1,11 +1,12 @@
-import getListItems from '../services/Item-api'
+import { toDoItems } from '../services/Item-api'
 import { useState } from "react";
 import { useEffect } from "react";
+import Create from './CreateItem';
 
 export default function ToDoItems() {
     const [toDoList, setToDoList] = useState([])
     useEffect( () => {
-        getListItems().then(res => setToDoList(res.data))
+       toDoItems().then(res => setToDoList(res.data))
     }, [])
     return (
         <>
@@ -16,6 +17,7 @@ export default function ToDoItems() {
                 )
                 })}
             </ul>
+           <Create /> 
         </>
     )
 }

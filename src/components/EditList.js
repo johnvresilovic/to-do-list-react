@@ -1,14 +1,14 @@
-import { getListItems, editList } from "../services/Item-api"
+import { toDoItems, editList } from "../services/Item-api"
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
-export const EditList = () => {
+export default function EditList() {
     const {id} = useParams()
     const {nav} = useNavigate()
     const [data, setData] = useState({})
 
     useEffect(()=>{
-        getListItems(id).then(res => setData(res.data))
+        toDoItems(id).then(res => setData(res.data))
     }, [])
 
     const editTheList = e => {
@@ -19,6 +19,11 @@ export const EditList = () => {
     }
 
    return (
-    <div>Edit the list</div>
+    <div>
+        <form onSubmit={{editTheList}}>
+            Description: <input type='text' name='description' defaultValue={data.description}/>
+            Complete: <input type='checkbox' name='complete' defaultChecked={data.complete}/>
+        </form>
+    </div>
   )
 }

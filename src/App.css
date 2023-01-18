@@ -6,13 +6,13 @@
 }
 
 body {
-  background-color:sandybrown;
+  background-color:lightblue;
 }
 
 .notepad {
   max-width: 30em;
   margin: 0 auto;
-  min-height: 25em;
+  min-height: 35em;
   padding: 10px;
   border: .25em solid;
   background-color: blanchedalmond;

@@ -1,8 +1,9 @@
 import './App.css';
 import { useState } from 'react';
-import ToDoItems from './components/ToDoItems';
-import OneItem from './components/OneItem'
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
+import EditList from './components/EditList';
+import OneItem from './components/OneItem';
+import ToDoItems from './components/ToDoItems';
 
 function App() {
 
@@ -22,17 +23,10 @@ function App() {
         <Routes>
             <Route path='/' element={<ToDoItems />}/>
             <Route path='/:id' element={<OneItem />}/>
+            <Route path='/:id/edit' element={<EditList />}/>
             </Routes>
         </Router>
       </div>
-      <div className='add'>
-      <form onSubmit={addItem}>
-            <h3>Add to the list</h3>
-            <p>Description:</p> <input type='text' name="description" size={50}></input> 
-            <br/>
-            <input type='submit' value='Add' id='submit'></input>
-        </form>
-        </div>
       </>
   );
 }
