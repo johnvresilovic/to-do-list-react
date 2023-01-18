@@ -7,8 +7,9 @@ export default function EditList() {
     const {nav} = useNavigate()
     const [data, setData] = useState({})
 
-    useEffect(()=>{
-        toDoItems(id).then(res => setData(res.data))
+    useEffect(() => {
+        toDoItems(id)
+        .then(res => setData(res.data))
     }, [])
 
     const editTheList = e => {
@@ -20,9 +21,10 @@ export default function EditList() {
 
    return (
     <div>
-        <form onSubmit={{editTheList}}>
+        <form onSubmit={editTheList}>
             Description: <input type='text' name='description' defaultValue={data.description}/>
             Complete: <input type='checkbox' name='complete' defaultChecked={data.complete}/>
+            <input type='submit' />
         </form>
     </div>
   )

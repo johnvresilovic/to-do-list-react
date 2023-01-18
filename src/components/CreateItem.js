@@ -3,13 +3,11 @@ import { createItem } from '../services/Item-api'
 
 export default function Create() {
     const nav = useNavigate()
-
     const createTheItem = (e) => {
         const item = {description: e.target.description.value, complete: false}
         createTheItem(item)
         nav('/')
     }
-
 return(
     <div>
         <br />
