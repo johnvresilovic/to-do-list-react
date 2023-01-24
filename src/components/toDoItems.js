@@ -1,6 +1,7 @@
 import { toDoItems, deleteItem } from '../services/Item-api'
 import { useState, useEffect } from "react";
 import Create from './CreateItem';
+import { Link } from "react-router-dom";
 
 export default function ToDoItems() {
     const [todos, setTodos] = useState([])
@@ -18,13 +19,21 @@ export default function ToDoItems() {
     return(
         <div>
             {todos.map((todo) => {
-                if (todo.complete) {
-                    return <p style={taskDone}><a href={`/${todo._id}`}>{todo.description}</a></p>
-                } else {
-                    return <p style={taskNotDone}><a href={`/${todo._id}`}>{todo.description}</a></p>
-                }
+                return (
+                    <div>
+                    <Link to={`/${todo._id}`}>{todo.description}</Link>
+                    </div>
+                )   
             })}
           <Create />  
         </div>
     )
 }
+
+
+// Old code do not delete
+// if (todo.complete) {
+//     return <p style={taskDone}><a href={`/${todo._id}`}>{todo.description}</a></p>
+// } else {
+//     return <p style={taskNotDone}><a href={`/${todo._id}`}>{todo.description}</a></p>
+// }
