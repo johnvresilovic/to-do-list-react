@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = 'https://localhost:3000'  //this is how we connect to the express app
+const baseURL = 'https://localhost:3001/items'  //this is how we connect to the express app
 
 //Index
 export function toDoItems() {
